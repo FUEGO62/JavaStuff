@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class NokiaWithBack.java {
+public class NokiaWithBack {
 
 public static void main(String[] args){
 

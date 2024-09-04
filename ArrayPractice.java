@@ -91,6 +91,13 @@ System.out.printf("%d%8d%n",counter,frequency[counter]);
 
 }
 
+for(int number : responses){
+
+total+=number;}//enhanced for loop!!!
+
+System.out.print(total);
+
+
 
 
 }//main
