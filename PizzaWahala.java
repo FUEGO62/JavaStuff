@@ -26,6 +26,10 @@ int numberOfBoxes = 0;
 
 int price = 0;
 
+int leftover = 0;
+
+try{
+
 System.out.print("Place your order...(i.e '3' for 'Big boys') :");
 
 int order = input.nextInt();
@@ -48,12 +52,20 @@ numberOfBoxes = number/order;
 
 if(number%order==0){System.out.printf("You should buy %d boxes!!",numberOfBoxes);
 
-System.out.printf("%nyour price is #%d",2200*(numberOfBoxes));
+System.out.printf("%nyour price is #%d%n",2200*(numberOfBoxes));
+
+System.out.printf("you have no slices leftover");
+
+
 }
 
 if(number%order!=0){System.out.printf("You should buy %d boxes!!",numberOfBoxes+1);
 
-System.out.printf("%nyour price is #%d",2200*(numberOfBoxes+1));
+System.out.printf("%nyour price is #%d%n",2200*(numberOfBoxes+1));
+
+leftover =  ((numberOfBoxes+1)*order)-number;
+
+System.out.printf("you have %d slices leftover",leftover);
 
 }
 
@@ -68,11 +80,19 @@ numberOfBoxes = number/order;
 
 if(number%order==0){System.out.printf("You should buy %d boxes!!",numberOfBoxes);
 
-System.out.printf("%nyour price is #%d",2400*(numberOfBoxes));}
+System.out.printf("%nyour price is #%d",2400*(numberOfBoxes));
+
+System.out.printf("%nyou have no slices leftover");
+}
 
 if(number%order!=0){System.out.printf("You should buy %d boxes!!",numberOfBoxes+1);
 
 System.out.printf("%nyour price is #%d",2400*(numberOfBoxes+1));}
+
+leftover =  ((numberOfBoxes+1)*order)-number;
+
+System.out.printf("%nyou have %d slices leftover",leftover);
+
 
 break;}
 
@@ -82,11 +102,20 @@ numberOfBoxes = number/order;
 
 if(number%order==0){System.out.printf("You should buy %d boxes!!",numberOfBoxes);
 
-System.out.printf("%nyour price is #%d",3000*(numberOfBoxes));}
+System.out.printf("%nyour price is #%d",3000*(numberOfBoxes));
+
+System.out.printf("%nyou have no slices leftover");
+}
 
 if(number%order!=0){System.out.printf("You should buy %d boxes!!",numberOfBoxes+1);
 
-System.out.printf("%nyour price is #%d",3000*(numberOfBoxes+1));}
+System.out.printf("%nyour price is #%d",3000*(numberOfBoxes+1));
+
+leftover =  ((numberOfBoxes+1)*order)-number;
+
+System.out.printf("%nyou have %d slices leftover",leftover);
+
+}
 
 break;}
 
@@ -96,22 +125,31 @@ numberOfBoxes = number/order;
 
 if(number%order==0){System.out.printf("You should buy %d boxes!!",numberOfBoxes);
 
-System.out.printf("%nyour price is #%d",4200*(numberOfBoxes));}
+System.out.printf("%nyour price is #%d",4200*(numberOfBoxes));
+
+System.out.printf("%nyou have no slices leftover");
+}
 
 if(number%order!=0){System.out.printf("You should buy %d boxes!!",numberOfBoxes+1);
 
-System.out.printf("%nyour price is #%d",4200*(numberOfBoxes+1));}
+System.out.printf("%nyour price is #%d",4200*(numberOfBoxes+1));
+
+leftover =  ((numberOfBoxes+1)*order)-number;
+
+System.out.printf("%nyou have %d slices leftover",leftover);
+
+}
 
 
 break;}
 
 
 
-
-
 }//switch
 
+}
 
+catch (Exception e){System.out.print("Pick an order on the menu!!");}
 
 }//main
 
