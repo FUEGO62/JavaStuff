@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.security.SecureRandom;
 
-public class LuckyNumber{
+public class LuckyNumberModified{
 
     public static void main(String[] args){
 
@@ -35,7 +35,9 @@ public class LuckyNumber{
 
 	}
 
-	
+	if(count<10)System.out.print("Either you know the secret or you got lucky!");
+	if(count==10)System.out.print("Aha! You know the secret");
+	if(count==10)System.out.print("You should be able to do better! Why should it take more then 10 guesses");
 
 
    }

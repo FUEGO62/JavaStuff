@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
 import java.security.SecureRandom;
-public class Arrays {
+public class ArrayHomePage {
 
     public static void main(String[] args){
 
@@ -11,7 +11,11 @@ public class Arrays {
 
 	int frequency[] = new int [6];
 
-	int responses[] = {1,1,2,3,4,5,5,32,3,2,4,5,1,2,3,4,5,3,2,14};
+	Arrays.fill(frequency,7);
+
+
+
+	int responses[] = {1,1,2,3,4,5,5,32,3,2,4,5,1,2,3,4,5,3,2,14};	
 
 	final byte ARRAY_LENGTH = 10;
 

@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.security.SecureRandom;
 public class ArrayPractice {
 
@@ -7,9 +8,15 @@ int total=0;
 
 SecureRandom randomNumber = new SecureRandom();
 
+System.out.print("Enter an array size : ");
+
+Scanner input = new Scanner(System.in);
+
 int array[] = new int [10];
 
 int frequencyy[] = new int [7];
+
+int baba = input.nextInt();
 
 int frequency[] = new int [6];
 
@@ -96,6 +103,42 @@ for(int number : responses){
 total+=number;}//enhanced for loop!!!
 
 System.out.print(total);
+
+for(int counter=0;counter<jesse.length;counter++){
+
+System.out.print("Enter a number : ");
+
+jesse[counter] = input.nextInt();
+
+}
+
+for(int counter=0;counter<jesse.length;counter++){
+
+System.out.println(jesse[counter]);
+
+total+=jesse[counter];
+
+
+}
+
+System.out.println(total);
+
+
+int [][] jessse = {{1,2,3,5},{4,5,6},{9,5,2}};
+
+for(int row = 0; row< jessse.length ; row++){
+
+for(int column = 0; column<jessse[row].length ;column ++ ){
+
+System.out.printf("%d ",jessse[row][column]);
+
+}
+
+System.out.println();
+
+}
+
+
 
 
 

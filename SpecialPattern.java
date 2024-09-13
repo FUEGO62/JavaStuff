@@ -4,28 +4,25 @@ public class SpecialPattern{
 
 public static void main(String[] args){
 
-int combat = 0;
+int decrementControl = 0;
 
-int combat2 = 0;
 
-int control = 0;
+int incrementControl = 0;
 
-int combat3 = 0;
+int firstHalfControl = 0;
 
-int monitor = 45;
+int spaceMonitor = 45;
 
 
 for(int count=1;count<6564;count*=3){
 
-combat = count;
+decrementControl = count;
 
-combat2 = count;
+incrementControl = 1;
 
-control = 1;
+firstHalfControl = decrementControl/3;
 
-combat3 = combat/3;
-
-for(int countings = 2;countings<monitor;countings++){
+for(int space = 2;space < spaceMonitor ;space ++){
 
 System.out.print(" ");
 
@@ -34,18 +31,18 @@ System.out.print(" ");
 
 
 
-while(control<combat3){
+while(incrementControl<firstHalfControl){
 
-if(control<27)System.out.printf("  %d  ",control);
+if(incrementControl<27)System.out.printf("  %d  ",incrementControl);
 
-if(control>=27 & control<243)System.out.printf("  %d ",control);
+if(incrementControl>=27 & incrementControl<243)System.out.printf("  %d ",incrementControl);
 
-if(control>=243 & control!=729)System.out.printf(" %d ",control);
+if(incrementControl>=243 & incrementControl!=729)System.out.printf(" %d ",incrementControl);
 
-if(control==729)System.out.printf(" %d",control);
+if(incrementControl==729)System.out.printf(" %d",incrementControl);
 
 
-control*=3;
+incrementControl*=3;
 }
 
 
@@ -53,20 +50,20 @@ control*=3;
 
 for(int counter = 0;counter<8;counter++){
 
-if(combat>1){
+if(decrementControl>1){
 
-combat/=3;
+decrementControl/=3;
 
-if(combat<27)System.out.printf("  %d  ",combat);
+if(decrementControl<27)System.out.printf("  %d  ",decrementControl);
 
-if(combat>=27 & combat<243)System.out.printf("  %d ",combat);
+if(decrementControl>=27 & decrementControl<243)System.out.printf("  %d ",decrementControl);
 
-if(combat>=243)System.out.printf(" %d ",combat);
+if(decrementControl>=243)System.out.printf(" %d ",decrementControl);
 
 }
 }
 
-monitor-=5;
+spaceMonitor-=5;
 
 System.out.println();
 
