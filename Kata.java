@@ -146,6 +146,22 @@ public class Kata{
 
 
 	}
+	public static void displayArray(String[][] gameboard){
 
+		for(int row = 0; row < gameboard.length ; row++){
+
+			for(int column = 0; column < gameboard[row].length ; column ++ ){
+
+
+				System.out.printf("%s ",gameboard[row][column]);
+
+			}
+
+			System.out.println("\n");
+
+	
+	}	
+
+    }
 
 }

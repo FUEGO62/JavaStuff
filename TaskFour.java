@@ -1,25 +1,27 @@
+import java.util.Scanner;
 public class TaskFour{
 
-public static void main(String[] args){
+    public static void main(String[] args){
 
-int count=4;
+	float score = 0;
+	float sum = 0;
 
-while(count <10){
- System.out.printf("%d ",count );
+	Scanner input = new Scanner(System.in);
 
-count = count +4;
-}
+	for(int count = 1; count < 11; count++){
+	
+		System.out.print("Enter your score: ");
+		
+		score = input.nextFloat();
 
+		if(count%2==0)sum += score;	
+	}
 
-
-
-
-
-
-
-}
-
-
-
+	
+	System.out.printf("the sum is %.2f",sum);
+	
+	
+	
+    }
 
 }

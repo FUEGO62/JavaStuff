@@ -5,7 +5,7 @@ public class BeautifyingStrings {
 
 	Scanner input = new Scanner(System.in);
 
-	System.out.print("Enter your name: ");
+	System.out.print("Enter a word or sentence: ");
 
 	String name = input.nextLine();
 
@@ -32,9 +32,7 @@ public class BeautifyingStrings {
 
 	if (isThereFullstop(name,length)) beautifulString += ".";
 	
-	return beautifulString;
-
-	
+	return beautifulString;	
 	
     }
 
@@ -43,7 +41,6 @@ public class BeautifyingStrings {
 	if((int)name.charAt(length-1) != 46) return true;
 
 	else return false;
-
     }
 
     public static boolean startsWithCaps(char firstLetter){

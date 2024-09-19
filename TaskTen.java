@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class TaskSix{
+public class TaskTen{
 
     public static void main(String[] args){
 
@@ -15,14 +15,14 @@ public class TaskSix{
 		
 		score = input.nextFloat();
 
-		if(score%2==0){
+		if(score>=0 && score<=100){
 			sum += score;	
 			counter++;
 
 		}
 	}
 
-	
+
 	System.out.printf("the average is %.2f",sum/counter);
 	
     }

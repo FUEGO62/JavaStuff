@@ -1,21 +1,28 @@
+import java.util.Scanner;
 public class TaskOne{
 
-public static void main(String[] args){
+    public static void main(String[] args){
 
-String figure = "@";
+	String xStreak = "[x][x][x]";
+	String total = "";
+	String [][]gameboard = {{"[x]","[ ]","[ ]"},{"[x]","[ ]","[ ]"},{"[x]","[ ]","[ ]"}};
 
-for(int count=1;count <6;count=count+1){System.out.printf("%s ",figure);}
+	
 
+	for(int counter = 0; counter <3;counter ++){
+	
+		for( int count=0 ;count<3;count++){
+	
+			total+=gameboard[count][counter];
 
+		}
 
+		if(total.equals(xStreak)){System.out.print(total);}
+		total = "";
+	}
 
-
-
-
-
-}
-
-
-
+	
+	
+    }
 
 }

@@ -1,4 +1,4 @@
-public class CurrentDateAndTime{
+public class PrayerSchedule{
 
     public static void main(String[]args){
 
@@ -73,8 +73,15 @@ public class CurrentDateAndTime{
 
 	}
 
-	System.out.printf("%02d/%02d/%d %02d:%02d%n",currentDay,currentMonth,currentYear,(hour+1)%24,minute%60);
-	
-	}
+	System.out.printf("Today is %02d/%02d/%d %02d:%02d%n",currentDay,currentMonth,currentYear,(hour+1)%24,minute%60);
+
+	int prayerMonitor = (remainingDays)%3;
+
+	if(prayerMonitor ==0) System.out.print("Tofunmi, today is your day");
+	if(prayerMonitor ==1) System.out.print("Mummy, today is your day");
+	if(prayerMonitor ==2) System.out.print("Daddy, today is your day");
+
+
+    }
 
 }

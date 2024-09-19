@@ -1,35 +1,31 @@
-public class TaskNine {
+import java.util.Scanner;
+public class TaskNine{
 
-public static void main(String[] args){
+    public static void main(String[] args){
 
-int counter = 4;
+	float score = 0;
+	float sum = 0;
+	int counter = 0;
 
-int countest = 8;
+	Scanner input = new Scanner(System.in);
 
-int totalcounter=0;
+	for(int count = 1; count < 11; count++){
+	
+		System.out.print("Enter your score: ");
+		
+		score = input.nextFloat();
 
-int totalcountest =0;
- 
+		if(score>=0 && score<=100){
+			sum += score;	
+			counter++;
 
-for(int count=4;count<10;count+=4){
+		}
+	}
 
-for(int control=0;control<5;control+=1){
+	System.out.printf("the sum is %.2f",sum);
 
-if(count==4){totalcounter=totalcounter+counter ; counter= counter*count;}
-
-else {totalcountest=totalcountest+countest;
-countest=countest*count;
-}
-}
-
-}
-int sum = totalcounter + totalcountest;
-
-int square = sum*sum;
-
-System.out.print(square);
-
-
-}
+	System.out.printf("the average is %.2f",sum/counter);
+	
+    }
 
 }

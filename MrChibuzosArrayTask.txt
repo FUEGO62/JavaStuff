@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class MrChibuzosArrayTask{
+
+	public static void main(String[] args){
+
+	float total = 0;
+	float deviation = 0;
+	float totalDeviation=0;
+	
+	Scanner input = new Scanner(System.in);
+	
+	System.out.print("How many numbers are in your population? : ");
+
+	int poppulationSize = input.nextInt();
+
+	float frequency[] = new float [poppulationSize];
+
+	for(int counter = 0; counter < frequency.length; counter++){
+
+		System.out.print("Enter your data points : ");
+
+		frequency[counter] = input.nextFloat();
+
+		total += frequency[counter];
+	
+		}
+    }
+
+}

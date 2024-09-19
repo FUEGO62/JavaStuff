@@ -1,15 +1,25 @@
-public class TaskFive {
+import java.util.Scanner;
+public class TaskFive{
 
-public static void main(String[] args){
+    public static void main(String[] args){
 
-for(int count=4;count<10;count+=4){
+	float score = 0;
+	float sum = 0;
 
-for(int control=0;control<4;control+=1){System.out.print(count);}
+	Scanner input = new Scanner(System.in);
 
-System.out.printf("%d ",count);}
+	for(int count = 1; count < 11; count++){
+	
+		System.out.print("Enter your score: ");
+		
+		score = input.nextFloat();
 
+		if(score%2==0)sum += score;	
+	}
 
-
-}
+	
+	System.out.printf("the sum is %.2f",sum);
+	
+    }
 
 }
