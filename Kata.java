@@ -124,10 +124,10 @@ public class Kata{
 
 			factorial = factorial*counter;
 
-			counter = counter +1;}
+			counter = counter +1;
+		}
 
 		return factorial;
-
 
 	}
 
@@ -146,7 +146,8 @@ public class Kata{
 
 
 	}
-	public static void displayArray(String[][] gameboard){
+
+	public static void display2DArray(String[][] gameboard){
 
 		for(int row = 0; row < gameboard.length ; row++){
 
@@ -158,10 +159,206 @@ public class Kata{
 			}
 
 			System.out.println("\n");
+	
+	        }	
+
+	}
+
+	public static int getLargest(int [] array){
+	
+		int largest = array[0];
+
+		for(int count = 1; count < array.length; count++){
+
+			if(array[count]>largest)largest=array[count];
+
+		}
+		
+		return largest;
+
+	}
+
+	public static int[] reverseIntArray(int [] array){
+	
+		int [] reversedArray = new int[array.length];
+
+		for(int count = 0; count < array.length; count++){
+
+			reversedArray[(array.length-1)-count]=array[count];
+
+		}
+		
+		return reversedArray;
+
+	}
+
+	public static void displayArray(char [] array){
+	
+		for(int count = 0; count < array.length; count++){
+
+			System.out.print(array[count]+" ");
+
+		}
+		
+	}
+
+	public static boolean checkArray(int [] array, int number){
+
+		int counter = 0;
+	
+		for(int count = 0; count < array.length; count++){
+
+			if(array[count] == number)counter++;
+
+		}
+
+
+		if(counter>0)return true;
+		else return false;
+	}
+
+
+	public static void displayEvenArray(int [] array){
+	
+		for(int count = 0; count < array.length; count++){
+
+			if((count+1)%2==0)System.out.print(array[count]+" ");
+
+		}
+		
+	}
+	
+	public static void displayOddArray(int [] array){
+	
+		for(int count = 0; count < array.length; count++){
+
+			if((count+1)%2!=0)System.out.print(array[count]+" ");
+
+		}
+		
+	}
+
+	public static int sumArray(int [] array){
+
+		int total = 0;
+	
+		for(int count = 0; count < array.length; count++){
+
+			total += array[count];
+
+		}
+ 
+		return total;
+	}
+
+	public static boolean isStringPalindrome(String word){
+
+		int counter = 0;
+
+		char []wordArray =new char [word.length()];
+	
+		for(int count = 0; count < word.length(); count++){
+
+			wordArray[count] =word.charAt(count);
+
+		}
+		for(int count = 0; count < word.length(); count++){
+
+			if(wordArray[word.length()-1-count] == wordArray[count])counter++;
+
+		}
+
+		if (counter == word.length()) return true;
+		else return false;
+		
+
+	}
+	public static char[] reverseCharArray(char [] array){
+	
+		char [] reversedArray = new char[array.length];
+
+		for(int count = 0; count < array.length; count++){
+
+			reversedArray[(array.length-1)-count]=array[count];
+
+		}
+		
+		return reversedArray;
+
+	}
+	public static char[] fuseArrays(char[] array1, int[] array2){
+
+		String sum = "";
+		char []concatenatedList = new char[array1.length+array2.length];
+	
+		for(int count = 0; count<array1.length;count++){
+
+			sum += array1[count];
+		}
+
+		for(int count = 0; count<array2.length;count++){
+
+			sum += array2[count];
+		}
+
+		for(int count = 0; count<concatenatedList.length;count++){
+
+			concatenatedList[count] = sum.charAt(count);
+		}
+
+
+		return concatenatedList;
+}
+	public static char[] fuseAlternateArrays(char[] array1, int[] array2){
+
+		String sum1 = "";
+		String sum2 = "";
+		int counter = 0;
+		char []concatenatedList = new char[array1.length+array2.length];
+	
+		for(int count = 0; count<array1.length;count++){
+
+			sum1 += array1[count];
+		}
+
+		for(int count = 0; count<array2.length;count++){
+
+			sum2 += array2[count];
+		}
+
+		for(int count = 0; count<sum1.length();count++){
+
+			concatenatedList[counter] = sum1.charAt(count);
+
+			counter+=2;
+
+		}
+		counter = 1;
+
+		for(int count = 0; count<sum2.length();count++){
+		
+			concatenatedList[counter] = sum2.charAt(count);
+
+			counter +=2;
+		}
 
 	
-	}	
-
-    }
-
+		return concatenatedList;
 }
+
+
+	public static char[] putInList(int number){
+
+		String name =  String.valueOf(number);
+		char[] list = new char [name.length()];
+		for(int count = 0; count<list.length;count++){
+		
+			list[count] = name.charAt(count);
+		
+		}
+
+		return list;
+
+	}
+
+}//class

@@ -68,7 +68,7 @@ for(int count =0;count<jesse.length;count++){
 
 total+=jesse[count];}
 
-System.out.print(total);
+System.out.println(total);
 
 for(int roll = 1;roll<36;roll++){
 
@@ -102,7 +102,7 @@ for(int number : responses){
 
 total+=number;}//enhanced for loop!!!
 
-System.out.print(total);
+System.out.println(total);
 
 for(int counter=0;counter<jesse.length;counter++){
 
