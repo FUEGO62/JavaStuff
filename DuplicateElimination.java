@@ -10,6 +10,8 @@ public class DuplicateElimination {
 
 	int number = 0;
 
+	int [][] table = new int [5][6];
+
 	int [] numbers = {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1};
 
 	int count = 0;
@@ -47,9 +49,48 @@ public class DuplicateElimination {
 
 	for(int i = 0;i<numbers.length;i++){
 
-		if(numbers[i]!=-1)System.out.printf("%d ",numbers[i]);
+		if(numbers[i]!=-1)System.out.printf("%d%n%n",numbers[i]);
 	
 	}
+
+		//EXCERSISE 7.13
+
+	int label = 1;
+	
+	 for (int col = 0; col < 6; col++){
+
+ 		for (int row = 0; row < 5; row++){
+  
+ 			table[row][col] = label;
+
+			label++;
+
+			System.out.printf("[%02d] ",table[row][col]);
+ 
+		}
+
+		System.out.println();
+	
+	}
+
+	System.out.println(getAverage(10,5,12,67,33,9));
+
+	
+    }
+
+	//EXCERCISE 7.14
+
+    public static double getAverage(double ... numbers){
+
+	double sum = 0;
+
+	for(double d : numbers){
+
+		sum += d;
+
+	}
+
+	return sum/numbers.length;
 
     }
 

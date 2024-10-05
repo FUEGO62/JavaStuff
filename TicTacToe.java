@@ -4,9 +4,13 @@ public class TicTacToe{
     public static void main(String[] args){
 
 	System.out.print("Welcome to the tic-tac-toe game ,To play the game selct the position you want to enter\n\n");
-	int [] spacefill={0,0,0,0,0,0,0,0,0};
+
+	boolean isDraw = true;
+	int [] spacefill=new int [9];
 	int count = 1;
 	int pass = 0;
+	int row =0;
+	int column = 0;
 	int streakControl = 0;
 	String x = "[X]";
 	String o = "[O]";
@@ -28,46 +32,40 @@ public class TicTacToe{
 
 	    System.out.println(count%2==0?"Player 2 Enter your move" :"Player1 Enter your move");
 
-	    String move = input.nextLine();
+	    int move = input.nextInt();
 
-	    if(count%2!=0){
+	    if(count%2!=0 & count <10 & count > 0 ){
 
-	    switch(move){
+		if((move%gameboard.length)!=0)row= move/gameboard.length;
+		else row = (move/gameboard.length)-1;
+ 
+		column = (move-1)%gameboard.length;
 
-		    case "1": {pass = 0;spacefill[0] ++;if(spacefill[0]==1){gameboard[0][0] = "[" + "X" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;} break;}
-		    case "2": {pass = 0;spacefill[1] ++;if(spacefill[1]==1){gameboard[0][1] = "[" + "X" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "3": {pass = 0;spacefill[2] ++;if(spacefill[2]==1){gameboard[0][2] = "[" + "X" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "4": {pass = 0;spacefill[3] ++;if(spacefill[3]==1){gameboard[1][0] = "[" + "X" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "5": {pass = 0;spacefill[4] ++;if(spacefill[4]==1){gameboard[1][1] = "[" + "X" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "6": {pass = 0;spacefill[5] ++;if(spacefill[5]==1){gameboard[1][2] = "[" + "X" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "7": {pass = 0;spacefill[6] ++;if(spacefill[6]==1){gameboard[2][0] = "[" + "X" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;} break;}
-		    case "8": {pass = 0;spacefill[7] ++;if(spacefill[7]==1){gameboard[2][1] = "[" + "X" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "9": {pass = 0;spacefill[8] ++;if(spacefill[8]==1){gameboard[2][2] = "[" + "X" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
+		pass = 0;
 
-		    default : System.out.print("INVALID INPUT");pass = 1;break;
+		spacefill[move-1] ++;
 
+		if(spacefill[move-1]==1){gameboard[row][column] = "[" + "X" + "]";}
+		else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;} 
+		 
 	    }
 
-	    }
 
-	    if(count%2==0){
+	    if(count%2==0 & count > 0 & count <10){
 
-	    	switch(move){
+	    	if((move%gameboard.length)!=0)row= move/gameboard.length;
+		else row = (move/gameboard.length)-1;
+ 
+		column = (move-1)%gameboard.length;
 
-		     case "1": {pass = 0;spacefill[0] ++;if(spacefill[0]==1){gameboard[0][0] = "[" + "O" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n");pass = 1;} break;}
-		    case "2": {pass = 0;spacefill[1] ++;if(spacefill[1]==1){gameboard[0][1] = "[" + "O" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "3": {pass = 0;spacefill[2] ++;if(spacefill[2]==1){gameboard[0][2] = "[" + "O" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "4": {pass = 0;spacefill[3] ++;if(spacefill[3]==1){gameboard[1][0] = "[" + "O" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "5": {pass = 0;spacefill[4] ++;if(spacefill[4]==1){gameboard[1][1] = "[" + "O" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "6": {pass = 0;spacefill[5] ++;if(spacefill[5]==1){gameboard[1][2] = "[" + "O" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "7": {pass = 0;spacefill[6] ++;if(spacefill[6]==1){gameboard[2][0] = "[" + "O" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;} break;}
-		    case "8": {pass = 0;spacefill[7] ++;if(spacefill[7]==1){gameboard[2][1] = "[" + "O" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
-		    case "9": {pass = 0;spacefill[8] ++;if(spacefill[8]==1){gameboard[2][2] = "[" + "O" + "]";}else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}  break;}
+		pass = 0;
+		spacefill[move-1] ++;
 
-		    default : System.out.print("INVALID INPUT");pass=1;break;
+		if(spacefill[move-1]==1){gameboard[row][column] = "[" + "O" + "]";}
+		else{System.out.print(" \n SPACE ALREADY TAKEN !!! \n"); pass = 1;}
 
-	    }
-	 }
+
+		    	 }
 	     	  
 	      
 	    if(streakControl==1)break;
@@ -87,9 +85,9 @@ public class TicTacToe{
 
 		}
 
-	if(total.equals(xStreak)||totalrows.equals(xStreak)||totaldiagonalright.equals(xStreak)||totaldiagonalleft.equals(xStreak)){System.out.print("Player 1 wins!!!");streakControl =1;break;}
+	if(total.equals(xStreak)||totalrows.equals(xStreak)||totaldiagonalright.equals(xStreak)||totaldiagonalleft.equals(xStreak)){System.out.print("Player 1 wins!!!");streakControl =1;isDraw=false;break;}
 		
-		if(total.equals(oStreak)||totalrows.equals(oStreak)||totaldiagonalright.equals(oStreak)||totaldiagonalleft.equals(oStreak)){System.out.print("Player 2 wins!!!");streakControl =1;break;}
+		if(total.equals(oStreak)||totalrows.equals(oStreak)||totaldiagonalright.equals(oStreak)||totaldiagonalleft.equals(oStreak)){System.out.print("Player 2 wins!!!");streakControl =1;isDraw = false;break;}
 
 		
 		total = "";
@@ -100,7 +98,8 @@ public class TicTacToe{
 	
 	}	
 	
-	 if(count == 10)System.out.print("Draw :( ");
+	if(isDraw){System.out.println("Its a draw :(");}
+
     }    
 
 }

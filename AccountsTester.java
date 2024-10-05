@@ -5,7 +5,7 @@ public class AccountsTester {
 
 	Scanner input = new Scanner(System.in);
 
-	Accounts myAccount = new Accounts("FUEGO",1000);  
+	Accounts myAccount = new Accounts("jesse",1000);  
 
 	System.out.printf("Initial name is: %s%n%n",myAccount.getName() );
 

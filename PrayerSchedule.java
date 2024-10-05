@@ -77,9 +77,9 @@ public class PrayerSchedule{
 
 	int prayerMonitor = (remainingDays)%3;
 
-	if(prayerMonitor ==0) System.out.print("Tofunmi, today is your day");
+	if(prayerMonitor ==0) System.out.print("Daddy, today is your day");
 	if(prayerMonitor ==1) System.out.print("Mummy, today is your day");
-	if(prayerMonitor ==2) System.out.print("Daddy, today is your day");
+	if(prayerMonitor ==2) System.out.print("Tofunmi, today is your day");
 
 
     }

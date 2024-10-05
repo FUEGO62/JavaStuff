@@ -192,7 +192,7 @@ public class Kata{
 
 	}
 
-	public static void displayArray(char [] array){
+	public static void displayArray(boolean [] array){
 	
 		for(int count = 0; count < array.length; count++){
 
@@ -360,5 +360,23 @@ public class Kata{
 		return list;
 
 	}
+
+	public static void display2DIntArray(int[][] gameboard){
+
+		for(int row = 0; row < gameboard.length ; row++){
+
+			for(int column = 0; column < gameboard[row].length ; column ++ ){
+
+
+				System.out.printf("%s ",gameboard[row][column]);
+
+			}
+
+			System.out.println();
+	
+	        }	
+
+	}
+
 
 }//class
