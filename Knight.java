@@ -5,14 +5,15 @@ public class Knight{
 	
 	public static void move(int move){
 	
-		if((currentRow +rowMoveEquivalent(move))>=0 & (currentRow +rowMoveEquivalent(move))<8 ){
+		if((currentRow +rowMoveEquivalent(move))>=0 & (currentRow +rowMoveEquivalent(move))<8 & (currentColumn +columnMoveEquivalent(move))>=0 & (currentColumn +columnMoveEquivalent(move))<8 & ChessBoard.getSpaces((currentRow +rowMoveEquivalent(move)),(currentColumn +columnMoveEquivalent(move)))==0 & move>0 & move<9){
 
-			if((currentColumn +columnMoveEquivalent(move))>=0 & (currentColumn +columnMoveEquivalent(move))<8 ){
-
-				currentRow += rowMoveEquivalent(move);
-				currentColumn += columnMoveEquivalent(move);
-			}
+			currentRow += rowMoveEquivalent(move);
+			currentColumn += columnMoveEquivalent(move);
+		
+			
 		}
+
+		else System.out.println("Invalid");
 
 	}
 	
