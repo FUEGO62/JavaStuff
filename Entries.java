@@ -23,5 +23,4 @@ public class Entries{
 		return body;
 	}
 
-
 }

@@ -1,74 +1,84 @@
-public class Turtle{
+public class Turtle {
 
-	static int position = 0;
-	static String face = "up";
-	static int currentRow = 10;
-	static int currentColumn = 10;
+	private Pen pen = new Pen();
+	private int position = 1;
+	private int bearing = 0;
+	private String face = "up";
 
-	public static int getRow(){ return currentRow; }
+	public Pen getPen(){
 
-	public static int getColumn(){ return currentColumn; }	
-
-	public static String getFace(int position){
-
-		if(position%4==0)face = "up";
-		if(position%4==1)face = "right";
-		if(position%4==2)face = "down"; 
-		if(position%4==3)face = "left";  	
-
-		return face;
+		return pen;
 	}
 
-	public static void turnRight(){
+	public int getPosition(){
 
-		position+=1;
-
-		face = getFace(position);
-
-		System.out.println("You are facing " + face);		
+		return position;
 	}
+	
+	public void move(int distance){
 
-	public static void turnLeft(){
+            if(face.equals("up") ){
 
-		position+=3;
+		if(position - (20*distance)>0)
+                	position -=(20*distance);
 
-		face = getFace(position);
+		else System.out.println("Out of bounds");
+            }
 
-		System.out.println("You are facing " + face);		
-	}
+	    if(face.equals("right")){
 
-	public static void move(int move){
+            	if((20-(position%20 + distance))>=0 & position%20!=0){
 
-		int[][] board = Board.getBoard();
+                position+=distance;
+            }
 
-		if(isInRange(move)){
+	    	else System.out.println("Out of bounds");
 
-			for(int count = 0;count < move; count ++){
+	    }
 
-				if(face.equals("up"))currentRow--;
-				if(face.equals("down"))currentRow++;
-				if(face.equals("left"))currentColumn--;
-				if(face.equals("right"))currentColumn++;
+            if(face.equals("down")){
 
-				if(Pen.isPenClicked())board[currentRow][currentColumn]=1;
-			}
+		if(position + (20*distance) <= 400){
+                	position+=(20*distance);
+
 		}
+
 		else System.out.println("Out of bounds");
 
-		Board.setBoard(board);
-	}
+            }
 
-	public static boolean isInRange(int move){
+            if(face.equals("left")){
 
-		boolean isInRange = false;
+		if(position%20 - distance >=1||position%20==0 & distance<20)
+                	position-=distance;
 
-		if(face.equals("up") & currentRow-move >= 1)isInRange =  true;
-		if(face.equals("down") & currentRow+move <=19)isInRange =  true;
-		if(face.equals("left") & currentColumn-move>=1)isInRange =  true;
-		if(face.equals("right") & currentColumn+move<=19 )isInRange = true;
-
-		return isInRange;
+		else System.out.println("Out of bounds");
+            }
 
 	}
 
+	public void turnRight(){
+
+		bearing++;
+		setFace();
+	}
+
+	public void turnLeft(){
+
+		bearing+=3;
+		setFace();
+
+	}
+
+	public void setFace() {
+
+        if((bearing%4)==0){face = "up";}
+        if((bearing%4)==1){face = "right";}
+        if((bearing%4)==2){face = "down";}
+        if((bearing%4)==3){face = "left";}
+    }
+
+    public String getFace(){
+        return face;
+    }
 }

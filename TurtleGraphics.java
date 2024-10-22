@@ -88,8 +88,6 @@ public class TurtleGraphics{
 						currentColumn++;			
 					}
 				}
-
-					
 	
 			}
 
@@ -108,7 +106,6 @@ public class TurtleGraphics{
 					}
 				}
 
-	
 			}
 
 			if(face.equals("left")){
@@ -125,8 +122,6 @@ public class TurtleGraphics{
 					}
 				}
 
-					
-	
 			}
 			
 			if(face.equals("down")){
@@ -141,16 +136,11 @@ public class TurtleGraphics{
 
 						currentRow++;			
 					}
-				}
-
-					
-	
+				}		
 			}
 			
 			if(outOfBounds) outOfBounds = false;
 			else board[currentRow][currentColumn] = 1;
-
-	
 		break;}
 
 		case 6: display2DIntArray(board);board[currentRow][currentColumn] = 0;
@@ -159,7 +149,6 @@ public class TurtleGraphics{
 	}
 
 	}
-	
 
     }
 
@@ -173,8 +162,6 @@ public class TurtleGraphics{
 				if(gameboard[row][column]==0)System.out.print("  ");
 				if(gameboard[row][column]==1)System.out.print("* ");
 				if(gameboard[row][column]==8)System.out.print("o ");
-
-
 			}
 
 			System.out.println();
@@ -182,7 +169,5 @@ public class TurtleGraphics{
 	        }	
 
 	}
-
-
 
 }

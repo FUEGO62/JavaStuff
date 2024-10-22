@@ -33,7 +33,6 @@ public class Diary{
 		entry.setBody(body);
 		
 		entries.add(entry);
-
 	}
 
 	public void read(String title){
@@ -56,7 +55,7 @@ public class Diary{
 	
 		for(int count = 0; count < entries.size();count++){
 
-			if(entries.get(count).getTitle().equals(title)){entries.remove(count);notFound=false;}
+			if(entries.get(count).getTitle().equals(title)){entries.remove(count);System.out.print("Deleted");notFound=false;}
 
 		}
 
@@ -64,14 +63,14 @@ public class Diary{
 
 	}
 
-
 	public void showAllTitles(){
 
 		for(int count = 0; count < entries.size();count++){
 
-			System.out.printf("%5s",entries.get(count).getTitle());
+			System.out.printf("entry %d) %s  ",(count+1),entries.get(count).getTitle());
 
 		}
 
+		if(entries.size()==0)System.out.println("No titles found");
 	}	
 }

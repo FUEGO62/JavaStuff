@@ -24,8 +24,7 @@ public class Shelf{
 		}
 	
 		if(found==false) throw new ArithmeticException();   
-		return diaries.get(count);
-		 
+		return diaries.get(count); 
 	}
 
 }

@@ -1,50 +1,66 @@
-public class Board{
+import
+public class Board {
 
-	static int [][] board = new int [21][21];
-	static int [][] spaces = new int [21][21];
+	private int[][] board = new int[20][20];
+	private Turtle turtle = new Turtle();
+	private int row = 0;
+	private int col = 0;
+	private ArrayList
 
-	public static int[][] getBoard(){
+	public Turtle getTurtle(){
 
-		return board;
+		return turtle;
 	}
-	
-	public static  void setBoard( int [][] currentBoard){
 
-		board = currentBoard;
-	}
+	public void displayBoard(){
 
-	public static void displayBoard(){
+		getCurrentPosition();
 
-		for(int count = 0; count < board.length ; count++){
+		board[row][col] = 1;
 
-			board[0][count] = 8;
-			board[count][0] = 8;
-			board[20][count] = 8;
-			board[count][20] = 8;	
-		}	
+		for(int count = -2; count < board.length;count++){
 
-		int currentRow = Turtle.getRow();
-		int currentColumn = Turtle.getColumn();
+			System.out.print("o ");
+		}
+		
+		System.out.println();
 
-		board[currentRow][currentColumn] = 1;
-		spaces = getBoard();
+		for(int count = 0; count < board.length;count++){
+			
+			for(int counter = 0 ; counter< board.length;counter++){
 
-		for(int count = 0; count < board.length; count ++){
+				if (counter==0)System.out.print("o ");
+				if(board[count][counter]==0){
+				
+					if(counter ==19){System.out.print("  o");}
+					else System.out.print("  ");
 
-			for(int counter = 0; counter< board[count].length; counter++){
+				}
+				else {
 
-				if(board[count][counter]==0)System.out.print("  ");					if(board[count][counter]==1)System.out.print("* ");
-				if(board[count][counter]==8)System.out.print("o ");
+					if(counter ==19)System.out.print("* o");
+					else System.out.print("* ");
+				}	
 			}
 
 			System.out.println();
 		}
 
-		if(Pen.isPenClicked()==false)board[currentRow][currentColumn] = 0;
+		for(int count = -2; count < board.length;count++){
 
-		board = spaces;
+			System.out.print("o ");
+		}
+		System.out.println();
 
 	}
 
+	public void getCurrentPosition(){
 
+		int move = turtle.getPosition();
+
+	        if((move%board.length)!=0)row= move/board.length;
+	        else row = (move/board.length)-1;
+	        col = (move-1)%board.length;
+
+	}
 }

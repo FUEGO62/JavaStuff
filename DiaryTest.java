@@ -4,7 +4,6 @@ public class DiaryTest{
     public static void main(String[] args){
 
 	displayMenu();
-
     }
 
     public static void displayMenu(){
@@ -34,8 +33,6 @@ public class DiaryTest{
 				String password = input.nextLine();
 
 				shelf.signUp(username, password);System.out.println("Enjoy your diary "+username);break;
-
-
 			}
 	
 			case "2":{ 
@@ -50,7 +47,6 @@ public class DiaryTest{
 		
 				String password = input.nextLine();
 
-
 				try{ diary = shelf.logIn(username,password);}
 
 				catch(Exception e){System.out.println("Invalid details");loggedIn = false;}
@@ -58,6 +54,9 @@ public class DiaryTest{
 				if(loggedIn){System.out.println("Logged in successfully");}break;}
 
 			case "3":{
+
+				if(diary.getPassword().equals(""))System.out.println("no diary yet :(");	
+				else{
 
 				System.out.println("Enter todays title!");
 		
@@ -67,28 +66,39 @@ public class DiaryTest{
 
 				String body = input.nextLine();
 	
-				diary.write(title,body);break;}
+				diary.write(title,body);System.out.println("Done!!");}break;}
 
 			case "4":{
 
+				if(diary.getPassword().equals(""))System.out.println("no diary yet :(");	
+
+				else{
+
 				System.out.println("Which title are you looking for");
 		
 				String title = input.nextLine();
 		
-				diary.read(title);break;}
+				diary.read(title);}break;}
 
 			case "5":{
 
+				if(diary.getPassword().equals(""))System.out.println("no diary yet :(");	
+				else{
+
 				System.out.println("Which title are you looking for");
 		
 				String title = input.nextLine();
 
-				diary.delete(title);break;}
+				diary.delete(title);}break;}
 
+			case "6":{
 
-			case "6":{diary.showAllTitles();break;} 
+				if(diary.getPassword().equals(""))System.out.println("no diary yet :(");	
+				else{
 
-			default: System.out.print("Invalid");
+				diary.showAllTitles();System.out.println();}break;} 
+
+			default: {if(!move.equals("99"))System.out.println("Invalid");break;}
 
 		}
 	}
