@@ -3,6 +3,8 @@ public class MenstrualApp{
 
     public static void main(String[]args){
 
+      try{
+	
 	Scanner input = new Scanner(System.in);
 	String date = "";
 
@@ -59,6 +61,9 @@ public class MenstrualApp{
 
 	System.out.printf("Your next period is most likely going to start on %s",PastDateAndTime.getpastTime(-1*(cycleLength-(periodStart-1))));
 
+  }
+
+  catch(Exception e){System.out.print("\nHave a good day");}
     }
 
 }

@@ -147,7 +147,7 @@ public class Kata{
 
 	}
 
-	public static void display2DArray(String[][] gameboard){
+	public static void displayArray(String[][] gameboard){
 
 		for(int row = 0; row < gameboard.length ; row++){
 
@@ -361,7 +361,7 @@ public class Kata{
 
 	}
 
-	public static void display2DIntArray(int[][] gameboard){
+	public static void displayArray(int[][] gameboard){
 
 		for(int row = 0; row < gameboard.length ; row++){
 

@@ -30,7 +30,6 @@ public class PastDateAndTime{
 
 				leapYearCount++;
 				yearcount++;
-
 			}
 
 		} 
