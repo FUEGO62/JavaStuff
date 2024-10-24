@@ -12,6 +12,8 @@ public class StudentGrade{
 	int bigFlag = 0;
 	int smallFlag = 0;
 	float average = 0;
+
+	try{
 	
 	System.out.print("How many students do you have :");
 
@@ -102,7 +104,11 @@ public class StudentGrade{
 
 		average = total/students;
 
+		printChar("=");
+
 		System.out.printf("%nSUBJECT SUMMARY%n%nSubject %d%n%n Highest scoring student is: Student %d scoring %.0f%n%nLowest scoring student is: student %d scoring %.2f%n%nTotal Score is: %.2f%n%nAverage score is: %.2f%n%nNumber of passes: %d%n%nNumber of fails: %d%n%n",count+1,bigFlag+1,gradebook[bigFlag][count],smallFlag+1,gradebook[smallFlag][count],total,average,passCount[count],failCount[count]);
+
+	printChar("=");
 
 	}
 
@@ -120,10 +126,14 @@ public class StudentGrade{
 	int bigFlag2 = 0;
 	int smallFlag2 = 0;
 
+	printChar("=");
+
 	System.out.printf("The hardest subject is Subject %d with %d failures%n%n",smallFlag+1,failCount[smallFlag]);
 
 	System.out.printf("The easiest subject is Subject %d with %d passes%n%n",bigFlag+1,passCount[bigFlag]);
 	
+	printChar("=");
+
 	for(int count = 0; count<gradebook.length;count++){
 
 		for(int counter = 0; counter<gradebook[count].length-3;counter++){
@@ -137,15 +147,78 @@ public class StudentGrade{
 
 	}
 
+	printChar("=");
+
 	System.out.printf("The overall Highest score is scored by Student %d in subject %d scoring %.0f%n%n",bigFlag+1,bigFlag2+1,gradebook[bigFlag][bigFlag2]);	
 
+	printChar("=");
+
 	System.out.printf("The overall Lowest score is scored by Student %d in subject %d scoring %.0f%n",smallFlag+1,smallFlag2+1,gradebook[smallFlag][smallFlag2]);	
+
+	printChar("=");
 
 	largest = 0;
 	smallest = 101;
 	total = 0;
 
+	for(int count = 0; count < gradebook.length; count ++){
+
+		if(gradebook[count][gradebook[count].length-3]>largest){
+
+			largest = gradebook[count][gradebook[count].length-3];
+			bigFlag = count;
+
+		}	
+
+		if(gradebook[count][gradebook[count].length-3]<smallest){
+
+			smallest = gradebook[count][gradebook[count].length-3];
+			smallFlag = count;
+
+		}	
+
+		total+= gradebook[count][gradebook[count].length-3];
+
+	}
+		
+	printChar("=");
+
+	System.out.println("CLASS SUMMARY\n");
+
+	printChar("=");
+
+	System.out.printf("Best Graduating Student is: Student %d scoring %.2f",bigFlag+1,gradebook[bigFlag][gradebook[bigFlag].length-3]);
+
+	printChar("!");
+
+	System.out.printf("Worst Graduating Student is: Student %d scoring %.2f",smallFlag+1,gradebook[smallFlag][gradebook[smallFlag].length-3]);
+
+	printChar("!");
+
+	System.out.println();	
+
+	printChar("=");
+
+	System.out.printf("Class total score is: %.2f%n%n",total);
+
+	System.out.printf("Class Average score is: %.2f%n%n",total/students);
+
+	}
+	catch(Exception e){System.out.println("Uh oh :( ");}
 	
+    }
+
+    public static void printChar(String i){
+
+	System.out.println("\n");
+
+	for(int count = 0; count < 40; count ++){
+
+		System.out.print(i);
+
+	}
+
+	System.out.println("\n");
 
     }
 
