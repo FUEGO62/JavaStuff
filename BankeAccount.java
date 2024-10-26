@@ -43,12 +43,12 @@ public class BankeAccount{
 	public void deposit(double amount){
 
 		if(amount>0)this.balance+=amount;
-		else System.out.print("Invalid");
+		else System.out.println("Invalid");
 	}
 
 	public void withdraw (double amount){
 
-		if(balance>amount){
+		if(balance>=amount){
 	
 			if(amount>0)this.balance-=amount;
 		}
@@ -63,6 +63,6 @@ public class BankeAccount{
 			balance-=amount;
 		}
 
-		else System.out.print("Invalid");
+		else System.out.println("Invalid");
 	}
 }

@@ -18,7 +18,7 @@ public class Banke{
 			}
 		}
 
-		if(found==false)throw new IllegalArgumentException();
+		if(found==false)System.out.print("Not found");
 
 		return accounts.get(count);
 	}
@@ -77,9 +77,9 @@ if((accounts.get(count).getAccountName()+accounts.get(count).getPassword()).equa
 			}
 		}
 
-		if(found==false)throw new IllegalArgumentException("Error");
+		if(found==false)System.out.print("Create an acount first");
 	
-		else System.out.print("Log in succesfull");
+		else System.out.println("Log in succesfull");
 
 		return accounts.get(count);
 

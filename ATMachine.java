@@ -16,6 +16,7 @@ public class ATMachine{
 	String acctNo = "";
 	double amount = 0;
 
+	try{
 
 	while(!move.equals(99)){
 
@@ -64,7 +65,7 @@ public class ATMachine{
 				
 				acc.deposit(amount);
 
-				if(amount>0)System.out.print("Done");
+				if(amount>0)System.out.println("Done");
 
 
 			}
@@ -81,7 +82,7 @@ public class ATMachine{
 				
 				acc.withdraw(amount);
 
-				if(amount>0)System.out.print("Done");
+				if(amount>0 & amount < acc.getBalance())System.out.print("Done");
 
 
 
@@ -98,7 +99,7 @@ public class ATMachine{
 
 			}
 
-		}
+		break;}
 	
 		case "6":{
 
@@ -111,10 +112,12 @@ public class ATMachine{
 			System.out.println("Who do you want to tramsfer to (i.e enter their account number)");
 				
 			acctNo = input.nextLine();
+			acctNo = input.nextLine();
 
+			
 			acc.transfer( amount , bank.getAccount(acctNo));
 
-			if(amount>0 & amount < acc.getBalance())System.out.print("Done");
+			if(amount>0 & amount < acc.getBalance())System.out.println("Done");
 
 
 			}
@@ -144,27 +147,23 @@ public class ATMachine{
 
 				acc = new BankeAccount();
 
-				System.out.print("Account closed");
+				System.out.println("Account closed");
 
 			}
 
 
 		break;}
 
-		default: {if(!move.equals(99))System.out.println("Invalid");break;}
+		default: {break;}
 
 
 	}
 
 	}
 
-	acctNo = bank.registerAccount(name , password);
+	}
 
-	System.out.println(acctNo);
-
-	System.out.println(acc);
-
-	acc = bank.logIn(name , password);
+	catch(Exception e ){System.out.print("Uh oh :( , something went wrong restart program and enter correct credentials");}
 
 	
 
