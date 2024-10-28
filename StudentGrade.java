@@ -71,13 +71,27 @@ public class StudentGrade{
 
 	}
 
+	printChar("=");	
+
+	System.out.printf("%14s"," ");
+
+	for(int count = 0; count < subjects; count++){
+	
+		System.out.printf("%5s%d  ","SUB",count+1);
+
+	}
+
+	System.out.printf("%5s%6s%6s","TOTAL","AVG","POS");
+
+	printChar("=");	
+
 	for(int count = 0; count<gradebook.length;count++){
 
 		System.out.printf("Student %d    ",count+1);
 
 		for(int counter = 0; counter<gradebook[count].length;counter++){
 
-			System.out.printf("%.0f   ",gradebook[count][counter]);
+			System.out.printf("%7.0f",gradebook[count][counter]);
 		}
 
 		System.out.println();
@@ -212,7 +226,7 @@ public class StudentGrade{
 
 	System.out.println("\n");
 
-	for(int count = 0; count < 40; count ++){
+	for(int count = 0; count < 70; count ++){
 
 		System.out.print(i);
 

@@ -82,7 +82,7 @@ public class ATMachine{
 				
 				acc.withdraw(amount);
 
-				if(amount>0 & amount < acc.getBalance())System.out.print("Done");
+				if(amount>0 & amount < acc.getBalance())System.out.println("Done");
 
 
 
@@ -163,7 +163,7 @@ public class ATMachine{
 
 	}
 
-	catch(Exception e ){System.out.print("Uh oh :( , something went wrong restart program and enter correct credentials");}
+	catch(Exception e ){System.out.print("\nUh oh :( , something went wrong restart program and enter correct credentials");}
 
 	
 

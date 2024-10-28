@@ -143,7 +143,6 @@ public class Checkout {
         item.setQuantity(quantity);
 
         return item;
-
     }
 
     public static void printChar(char a) {

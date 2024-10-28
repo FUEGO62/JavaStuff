@@ -35,7 +35,7 @@ public class Afeez{
 
 				phoneNumber = input.nextLine();
 
-				if(phoneNumber.length()==11){phonebook.addContact(firstName,lastName,phoneNumber);System.out.println("Done");}
+				if(phoneNumber.length()==11 & phoneNumber.matches("[0-9]+")){phonebook.addContact(firstName,lastName,phoneNumber);System.out.println("Done");}
 
 				else System.out.println("invalid phone number!!");
 
@@ -46,9 +46,16 @@ public class Afeez{
 				System.out.println("Enter phone number of contact you wish to remove");
 				phoneNumber = input.nextLine();
 
-				if(phoneNumber.length()==11)phonebook.removeContact(phoneNumber);
+				matches = phonebook.findPhoneNumber(phoneNumber);
+
+				displayMatches(matches);
+
+				if(phoneNumber.length()==11 & phoneNumber.matches("[0-9]+"))phonebook.removeContact(phoneNumber);
 
 				else System.out.println("invalid phone number!!");
+
+				if(matches.size()>0)System.out.println("Contact deleted");
+
 
 
 			break;}
@@ -94,11 +101,15 @@ public class Afeez{
 				System.out.println("Enter phone number of contact you wish to edit");
 				phoneNumber = input.nextLine();
 
+				matches = phonebook.findFirstName(phoneNumber);
+
+				displayMatches(matches);
+
+				if(phoneNumber.length()==11 & matches.size()>0){phonebook.edit(phoneNumber,firstName);
+
 				System.out.println("Enter the new name ");
 				
-				firstName = input.nextLine();
-
-				if(phoneNumber.length()==11)phonebook.edit(phoneNumber,firstName);
+				firstName = input.nextLine();}
 
 				else System.out.println("invalid phone number!!");
 

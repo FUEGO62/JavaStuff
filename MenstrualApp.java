@@ -24,7 +24,7 @@ public class MenstrualApp{
 
 		}	
 
-	if(periodStart<0){System.out.printf("use your head %s ",name);
+	if(periodStart<0){System.out.printf("you should probable see a doctor %s ",name);
 
 		throw new IllegalArgumentException();}
 
