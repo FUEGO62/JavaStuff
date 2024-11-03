@@ -66,7 +66,11 @@ public class TetrisDriver {
             continueGame =  TetrisBoard.isGameOver(board);
 
             map.display();
+
+	    map = new TetrisBoardMap();
+
         }
+
     }
 
 }

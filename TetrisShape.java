@@ -1,3 +1,4 @@
+
 public class TetrisShape {
 
     private int size;
