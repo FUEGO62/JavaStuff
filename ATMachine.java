@@ -20,6 +20,8 @@ public class ATMachine{
 
 	while(!move.equals(99)){
 
+		System.out.print("Select an option: ");
+
 		move = input.nextLine();
 	switch(move){
 
@@ -84,14 +86,11 @@ public class ATMachine{
 
 				if(amount>0 & amount < acc.getBalance())System.out.println("Done");
 
-
-
 			}
 
 		break;}
 
 		case "5":{
-
 
 			if(acc.getAccountName().equals("")){System.out.println("You need to log in first");}	else {
 
@@ -114,7 +113,6 @@ public class ATMachine{
 			acctNo = input.nextLine();
 			acctNo = input.nextLine();
 
-			
 			acc.transfer( amount , bank.getAccount(acctNo));
 
 			if(amount>0 & amount < acc.getBalance())System.out.println("Done");
@@ -123,7 +121,6 @@ public class ATMachine{
 			}
 
 		break;}
-
 
 		case "7":{
 
@@ -136,7 +133,6 @@ public class ATMachine{
 				acc.setPassword(password);
 
 				System.out.println("Password has changed");
-
 			}
 
 		break;}
@@ -148,14 +144,11 @@ public class ATMachine{
 				acc = new BankeAccount();
 
 				System.out.println("Account closed");
-
 			}
-
 
 		break;}
 
-		default: {break;}
-
+		default: {System.out.println(":(");break;}
 
 	}
 

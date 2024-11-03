@@ -13,8 +13,6 @@ public class Item {
         this.quantity = quantity;
     }
 
-
-
     public void setName(String name) {
         this.name = name;
     }

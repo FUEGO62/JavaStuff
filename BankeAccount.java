@@ -48,9 +48,9 @@ public class BankeAccount{
 
 	public void withdraw (double amount){
 
-		if(balance>=amount){
+		if(balance>=amount & amount>0){
 	
-			if(amount>0)this.balance-=amount;
+			balance-=amount;
 		}
 
 		else System.out.print("Invalid");

@@ -9,7 +9,6 @@ public class Checkout {
         ArrayList<Item> cart = new ArrayList<Item>();
         String continuePurchase = "yes";
         double payment = 0.0;
-	String [] useless = new String[4];
 
         System.out.println("Enter Customer name ");
         String name = input.nextLine();
@@ -152,6 +151,7 @@ public class Checkout {
         for(int i = 0; i<50; i++){
             System.out.print(a);
         }
+
         System.out.println();
     }
 }
